@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>DPP Budějovická - Vozovna</title>
+    <style>
+        :root { --red: #d32f2f; --dark: #212121; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f4f4; }
+        header { background: var(--red); color: white; padding: 20px; text-align: center; }
+        nav { background: var(--dark); display: flex; justify-content: center; }
+        nav a { color: white; padding: 15px 25px; text-decoration: none; }
+        nav a:hover { background: #444; }
+        .container { padding: 20px; max-width: 1100px; margin: auto; }
+        .card { background: white; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #f2f2f2; font-weight: bold; color: var(--dark); }
+        tr:nth-child(even) { background: #fafafa; }
+        .owner-res { color: #d32f2f; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header><h1>Vozový park - Kompletní přehled</h1><p>Správce: Petr Solaris</p></header>
+    <nav>
+        <a href="index.html">Mapa sítě</a>
+        <a href="vozovna.html" style="border-bottom: 4px solid white;">Vozovna</a>
+        <a href="jizdni_rady.html">Jízdní řády</a>
+    </nav>
+    <div class="container">
+        
+        <div class="card">
+            <h2>SOR</h2>
+            <table>
+                <tr><th>Model</th><th>Ev. číslo</th><th>Vlastník / Status</th></tr>
+                <tr><td>NSG 12</td><td>[4545]</td><td>Slovensko</td></tr>
+                <tr><td>NSG 12</td><td>[7988]</td><td>Samuel</td></tr>
+                <tr><td>NSG 12</td><td>[7987]</td><td><b>Ředitel (Petr Solaris)</b></td></tr>
+                <tr><td>NSG 12</td><td>[7986]</td><td>Tadeáš</td></tr>
+                <tr><td>BN 9.5</td><td>[7999]</td><td>Sotous z Chrudimy</td></tr>
+                <tr><td>BN 9.5</td><td>[7998]</td><td>Janek</td></tr>
+                <tr><td>NB 12</td><td>[7997]</td><td>Záloha</td></tr>
+                <tr><td>NB 12</td><td>[7996]</td><td>Záloha</td></tr>
+                <tr><td>NB 12</td><td>[7995]</td><td>Záloha</td></tr>
+                <tr><td>NB 12</td><td>[7994]</td><td>Záloha</td></tr>
+                <tr><td>BN 12</td><td>[7993]</td><td>Záloha</td></tr>
+                <tr><td>BN 12</td><td>[7992]</td><td>Samuel</td></tr>
+                <tr><td>BN 12</td><td>[7991]</td><td>Ředitel</td></tr>
+                <tr><td>BN 12</td><td>[7990]</td><td>Samuel</td></tr>
+                <tr><td>NB 18</td><td>[7985]</td><td>Tadex</td></tr>
+                <tr><td>NB 18</td><td>[7984]</td><td class="owner-res">Rezervace: Samuel</td></tr>
+            </table>
+        </div>
 
+        <div class="card">
+            <h2>IVECO</h2>
+            <table>
+                <tr><th>Model</th><th>Ev. číslo</th><th>Vlastník / Status</th></tr>
+                <tr><td>Urbanway 10.5</td><td>[9999]</td><td>Sotous z Chrudimy</td></tr>
+                <tr><td>Urbanway 10.5</td><td>[9998]</td><td>Záloha</td></tr>
+                <tr><td>Urbanway 10.5</td><td>[9997]</td><td>Záloha</td></tr>
+                <tr><td>Urbanway 10.5</td><td>[9996]</td><td>Záloha</td></tr>
+                <tr><td>Urbanway 10.5</td><td>[9995]</td><td>Záloha</td></tr>
+                <tr><td>Crossway 14.5</td><td>[9989]</td><td>Záloha</td></tr>
+                <tr><td>Crossway 14.5</td><td>[9988]</td><td>Záloha</td></tr>
+                <tr><td>Crossway 14.5</td><td>[9987]</td><td>Ladislav</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>RENAULT & SOLARIS & KAROSA</h2>
+            <table>
+                <tr><th>Model</th><th>Ev. číslo</th><th>Vlastník / Status</th></tr>
+                <tr><td>Citybus 12</td><td>[5999]</td><td>Cibor</td></tr>
+                <tr><td>Citybus 12</td><td>[5998]</td><td>Kluk z Medlanek</td></tr>
+                <tr><td>Citybus 12</td><td>[5997]</td><td>Janek</td></tr>
+                <tr><td>Urbino 18</td><td>[8888]</td><td><b>Petr Solaris</b></td></tr>
+                <tr><td>Urbino 12</td><td>[8887]</td><td>Záloha</td></tr>
+                <tr><td>Karosa 732</td><td>[5555]</td><td>Ředitel</td></tr>
+                <tr><td>Karosa 951</td><td>[5541]</td><td>Záloha</td></tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

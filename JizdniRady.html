@@ -1,1 +1,52 @@
-
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>DPP Budějovická - Jízdní řády</title>
+    <style>
+        :root { --red: #d32f2f; --dark: #212121; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f4f4; }
+        header { background: var(--red); color: white; padding: 20px; text-align: center; }
+        nav { background: var(--dark); display: flex; justify-content: center; }
+        nav a { color: white; padding: 15px 25px; text-decoration: none; }
+        .container { padding: 20px; max-width: 900px; margin: auto; }
+        .line-box { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 8px solid var(--red); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .badge { background: var(--red); color: white; padding: 5px 12px; border-radius: 4px; font-weight: bold; font-size: 1.2em; }
+        .info { margin-top: 10px; color: #555; }
+    </style>
+</head>
+<body>
+    <header><h1>Aktuální jízdní řády</h1></header>
+    <nav>
+        <a href="index.html">Mapa sítě</a>
+        <a href="vozovna.html">Vozovna</a>
+        <a href="jizdni_rady.html" style="border-bottom: 4px solid white;">Jízdní řády</a>
+    </nav>
+    <div class="container">
+        <div class="line-box">
+            <h3><span class="badge">124</span> Zelený Pruh ↔ Budějovická</h3>
+            <p class="info">Pracovní den: 00, 15, 30, 45 | Víkend: 00, 30</p>
+        </div>
+        <div class="line-box">
+            <h3><span class="badge">188</span> Pankrác ↔ Kavčí Hory</h3>
+            <p class="info">Odjezdy každých 15 minut v pracovní dny (:00, :15, :30, :45).</p>
+        </div>
+        <div class="line-box">
+            <h3><span class="badge">193</span> Pankrác ↔ Krčský Hřbitov</h3>
+            <p class="info">Interval: 20 minut (00, 20, 40) v pracovní dny.</p>
+        </div>
+        <div class="line-box">
+            <h3><span class="badge">134</span> Kavčí Hory ↔ Zelený Pruh</h3>
+            <p class="info">Odjezdy v pracovní dny: :00, :24, :48.</p>
+        </div>
+        <div class="line-box" style="border-left-color: #4caf50;">
+            <h3><span class="badge" style="background:#4caf50;">L356</span> Zelený Pruh ↔ Kavčí Hory</h3>
+            <p class="info">Výroční linka: Odjezd každou hodinu v :00.</p>
+        </div>
+        <div class="line-box">
+            <h3><span class="badge">901001</span> Zelený Pruh ↔ Hřbitov</h3>
+            <p class="info">Noční/Speciální linka: Odjezd každou hodinu v :00.</p>
+        </div>
+    </div>
+</body>
+</html>

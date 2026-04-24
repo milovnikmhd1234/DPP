@@ -2,134 +2,41 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DPP Budějovická - Administrace</title>
+    <title>DPP Budějovická - Mapa</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
-        :root { --dpp-red: #d32f2f; --dark: #212121; }
-        body { font-family: sans-serif; margin: 0; background: #f0f0f0; }
-        header { background: var(--dpp-red); color: white; padding: 15px; text-align: center; }
-        nav { background: var(--dark); display: flex; justify-content: center; position: sticky; top: 0; z-index: 1000; }
-        nav button { background: none; border: none; color: white; padding: 15px 20px; cursor: pointer; font-size: 16px; }
-        nav button:hover { background: #444; }
-        nav button.active { border-bottom: 4px solid white; }
-        .container { padding: 20px; max-width: 1100px; margin: auto; }
-        .section { display: none; }
-        .section.visible { display: block; }
+        :root { --red: #d32f2f; --dark: #212121; }
+        body { font-family: sans-serif; margin: 0; background: #f4f4f4; }
+        header { background: var(--red); color: white; padding: 15px; text-align: center; }
+        nav { background: var(--dark); display: flex; justify-content: center; }
+        nav a { color: white; padding: 15px 20px; text-decoration: none; }
+        nav a:hover { background: #444; }
+        nav a.active { border-bottom: 4px solid white; }
+        .container { padding: 20px; max-width: 1000px; margin: auto; }
         #map { height: 500px; width: 100%; border-radius: 8px; border: 2px solid #ccc; }
-        .card { background: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background: #eee; }
-        .line-badge { background: var(--dpp-red); color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Vozovna Budějovická</h1>
-    <p>Ředitel: Petr Solaris</p>
-</header>
-
-<nav>
-    <button onclick="openTab('mapa', this)" class="active">Mapa</button>
-    <button onclick="openTab('vozidla', this)">Vozový park</button>
-    <button onclick="openTab('jr', this)">Jízdní řády</button>
-</nav>
-
-<div class="container">
-    <div id="mapa" class="section visible">
-        <div class="card">
-            <h2>Mapa sítě Budějovická</h2>
-            <div id="map"></div>
-        </div>
+    <header><h1>DPP Budějovická - Centrální Mapa</h1></header>
+    <nav>
+        <a href="index.html" class="active">Mapa</a>
+        <a href="Vozovna.html">Vozovna</a>
+        <a href="JizdniRady.html">Jízdní řády</a>
+    </nav>
+    <div class="container">
+        <div id="map"></div>
     </div>
-
-    <div id="vozidla" class="section">
-        <div class="card">
-            <h2>SOR</h2>
-            <table>
-                <tr><th>Model</th><th>Ev. číslo</th><th>Vlastník / Status</th></tr>
-                <tr><td>NSG 12</td><td>4545</td><td>Slovensko</td></tr>
-                <tr><td>NSG 12</td><td>7987</td><td>Ředitel</td></tr>
-                <tr><td>NSG 12</td><td>7988</td><td>Samuel</td></tr>
-                <tr><td>BN 9.5</td><td>7999</td><td>Sotous z Chrudimy</td></tr>
-                <tr><td>NB 18</td><td>7985</td><td>Tadex</td></tr>
-                <tr><td>BN 12</td><td>7992</td><td>Samuel</td></tr>
-            </table>
-        </div>
-        <div class="card">
-            <h2>IVECO & Ostatní</h2>
-            <table>
-                <tr><th>Model</th><th>Ev. číslo</th><th>Vlastník / Status</th></tr>
-                <tr><td>Urbanway 10.5</td><td>9999</td><td>Sotous z Chrudimy</td></tr>
-                <tr><td>Crossway 14.5</td><td>9987</td><td>Ladislav</td></tr>
-                <tr><td>Citybus 12</td><td>5999</td><td>Cibor</td></tr>
-                <tr><td>Urbino 18</td><td>8888</td><td>Petr Solaris</td></tr>
-                <tr><td>Karosa 732</td><td>5555</td><td>Ředitel</td></tr>
-            </table>
-        </div>
-    </div>
-
-    <div id="jr" class="section">
-        <div class="card">
-            <h3><span class="line-badge">124</span> Zelený Pruh - Budějovická</h3>
-            <p>Interval: 15 min (špička), 30 min (víkend)</p>
-        </div>
-        <div class="card">
-            <h3><span class="line-badge">188</span> Pankrác - Kavčí Hory</h3>
-            <p>Odjezdy: :00, :15, :30, :45 (Pracovní dny)</p>
-        </div>
-        <div class="card">
-            <h3><span class="line-badge">134</span> Kavčí Hory - Zelený Pruh</h3>
-            <p>Odjezdy: :00, :24, :48 (Pracovní dny)</p>
-        </div>
-        <div class="card">
-            <h3><span class="line-badge">L356</span> Výroční linka</h3>
-            <p>Odjezd každou hodinu v :00 (Zelený Pruh)</p>
-        </div>
-    </div>
-</div>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-    // Funkce pro přepínání karet
-    function openTab(tabId, btn) {
-        var sections = document.getElementsByClassName("section");
-        for (var i = 0; i < sections.length; i++) {
-            sections[i].classList.remove("visible");
-        }
-        document.getElementById(tabId).classList.add("visible");
-        
-        var buttons = document.getElementsByTagName("button");
-        for (var i = 0; i < buttons.length; i++) {
-            buttons[i].classList.remove("active");
-        }
-        btn.classList.add("active");
-
-        if (tabId === 'mapa') {
-            setTimeout(function(){ map.invalidateSize(); }, 200);
-        }
-    }
-
-    // Inicializace mapy
-    var map = L.map('map').setView([50.0443, 14.4485], 14);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
-
-    // Zastávky
-    var stops = [
-        { name: "Budějovická", coords: [50.0443, 14.4485] },
-        { name: "Pankrác", coords: [50.0511, 14.4393] },
-        { name: "Zelený Pruh", coords: [50.0405, 14.4325] },
-        { name: "Kavčí Hory", coords: [50.0505, 14.4289] }
-    ];
-
-    stops.forEach(function(stop) {
-        L.marker(stop.coords).addTo(map).bindPopup(stop.name);
-    });
-</script>
-
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([50.0443, 14.442], 14);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+        var stops = [
+            { n: "Budějovická", p: [50.0443, 14.4485] },
+            { n: "Pankrác", p: [50.0511, 14.4393] },
+            { n: "Zelený Pruh", p: [50.0405, 14.4325] },
+            { n: "Kavčí Hory", p: [50.0505, 14.4289] }
+        ];
+        stops.forEach(s => L.marker(s.p).addTo(map).bindPopup(s.n));
+    </script>
 </body>
 </html>
